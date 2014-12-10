@@ -32,14 +32,42 @@ setInterval(function () {
     h.innerHTML= hours;
     m.innerHTML = minutes;
     s.innerHTML = seconds;
-
- 
 }, 1000);
 
+
+var emailValid =  {
+    content: "Success",
+    style: "success",
+    timeout: 3000
+}
+
+var emailNotValid =  {
+    content: "Please insert a valid mail",
+    style: "error",
+    timeout: 3000
+}
 
 var register = $('#register');
 
 register.submit(function(e){
+    var email = $('#email').val();    
     e.preventDefault();
-    console.log('hello world');
+
+    //email validation
+    var regex = new RegExp(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
+    if( regex.test(email) ) {
+        if (email !== "") {
+            console.log("valid");
+            $.snackbar(emailValid);
+            return true;
+        } else {
+            console.log("Please insert an email");
+            $.snackbar(emailNotValid);
+            return false;
+        }
+    } else {
+        $.snackbar(emailNotValid);
+        console.log("not valid");
+        return false;
+    }
 });

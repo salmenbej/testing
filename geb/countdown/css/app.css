@@ -93,7 +93,7 @@ label {
 	position: relative;
 	font-weight: lighter;
 	margin: 30px 0 0 30px;
-	width: 50px;
+	text-align: left;
 }
 
 input[type="radio"] {
@@ -119,6 +119,64 @@ input[type="radio"]:checked + label:before {
 	background-color: #000;
 }
 
+#snackbar-container {
+  position: fixed;
+  right: 20px;
+  bottom: 0;
+  z-index: 99999;
+}
+.snackbar {
+  overflow: hidden;
+  clear: both;
+  min-width: 288px;
+  max-width: 568px;
+  cursor: pointer;
+  opacity: 0;
+}
+.snackbar.snackbar-opened {
+  height: auto;
+  opacity: 1;
+}
+
+
+.snackbar {
+  background-color: #323232;
+  color: #FFFFFF;
+  font-size: 14px;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  height: 0;
+  -moz-transition: -moz-transform 0.2s ease-in-out, opacity 0.2s ease-in, height 0 linear 0.2s, padding 0 linear 0.2s, height 0 linear 0.2s;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out, opacity 0.2s ease-in, height 0 linear 0.2s, padding 0 linear 0.2s, height 0 linear 0.2s;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in, height 0 linear 0.2s, padding 0 linear 0.2s, height 0 linear 0.2s;
+  -moz-transform: translateY(200%);
+  -webkit-transform: translateY(200%);
+  transform: translateY(200%);
+  text-align: center;
+}
+
+.snackbar.success {
+	background-color: #31A658;
+}
+.snackbar.error {
+	background-color: #B33A35;
+}
+
+.snackbar.snackbar-opened {
+  padding: 14px 0px;
+  margin-bottom: 20px;
+  height: auto;
+  -moz-transition: -moz-transform 0.2s ease-in-out, opacity 0.2s ease-in, height 0 linear 0.2s;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out, opacity 0.2s ease-in, height 0 linear 0.2s;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in, height 0 linear 0.2s, height 0 linear 0.2s;
+  -moz-transform: none;
+  -webkit-transform: none;
+  transform: none;
+}
+.snackbar.toast {
+  border-radius: 200px;
+}
+
 /* Tablet */
 @media (min-width: 47.9375em){
 	
@@ -127,7 +185,7 @@ input[type="radio"]:checked + label:before {
 	}
 
 	h2 {
-		font-size: 1.6em;
+		font-size: 1.2em;
 		margin-bottom: 90px;
 	}
 
@@ -157,4 +215,22 @@ input[type="radio"]:checked + label:before {
 	li {
 		font-size: 2.5em;
 	}
+}
+@media (max-width: 767px) {
+  #snackbar-container {
+    left: 0px !important;
+    right: 0px;
+    width: 100%;
+  }
+  #snackbar-container .snackbar {
+    min-width: 100%;
+  }
+  #snackbar-container [class="snackbar snackbar-opened"] ~ .snackbar.toast {
+    margin-top: 20px;
+  }
+  #snackbar-container [class="snackbar snackbar-opened"] {
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+
 }

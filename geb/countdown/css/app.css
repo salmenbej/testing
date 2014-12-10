@@ -143,10 +143,17 @@ input[type="radio"]:checked + label:before {
 		font-weight: lighter;
 		font-size: 1.2em
 	}
+
+	input[type="email"] {
+		width: 300px;
+	}
 }
 
 /* Desktop */
 @media (min-width: 64.0625em){
+	h2 {
+		font-size: 1.2em;
+	}
 	li {
 		font-size: 2.5em;
 	}

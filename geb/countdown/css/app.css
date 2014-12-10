@@ -33,11 +33,17 @@ h3 {
 
 .logo {
 	display: block;
-	margin-bottom: 30px;
+	margin-bottom: 15px;
 }
 
 .logo img {
-	width: 300px;
+	width: 270px;
+}
+
+h2 {
+	margin-bottom: 60px;
+	font-weight: normal;
+	font-size: 1em;
 }
 
 ul {
@@ -48,26 +54,25 @@ ul {
 li {
 	display: inline-block;
 	text-align: center;
-	font-size: 2em;
+	font-size: 1.2em;
 }
 
 #days,#hours,#minutes,#seconds {
-	width: 50px;
+	width: 20px;
 }
 .text,.separator {
 	font-weight: lighter;
-	font-size: 1.2em
+	font-size: 0.8em
 }
 
 form {
-	margin-top: 30px;
+	margin-top: 60px;
 }
 
 input[type="email"] {
 	font-family: 'Brandon', Helvetica, Arial, sans-serif;
 	color: #000;
 	padding: 8px;
-	width: 250px;
 	border: 1px solid #000;
 }
 
@@ -87,7 +92,8 @@ label {
 	display: inline-block;
 	position: relative;
 	font-weight: lighter;
-	margin: 30px 60px 0 0;
+	margin: 30px 0 0 30px;
+	width: 50px;
 }
 
 input[type="radio"] {
@@ -116,9 +122,32 @@ input[type="radio"]:checked + label:before {
 /* Tablet */
 @media (min-width: 47.9375em){
 	
+	.logo img {
+		width: 400px;
+	}
+
+	h2 {
+		font-size: 1.6em;
+		margin-bottom: 90px;
+	}
+
+	li {
+		font-size: 2.5em;
+	}
+
+	#days,#hours,#minutes,#seconds {
+		width: 50px;
+	}
+
+	.text,.separator {
+		font-weight: lighter;
+		font-size: 1.2em
+	}
 }
 
 /* Desktop */
 @media (min-width: 64.0625em){
-	
+	li {
+		font-size: 2.5em;
+	}
 }
